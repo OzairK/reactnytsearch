@@ -14,9 +14,10 @@ if (process.env.NODE_ENV === "production") {
 }
 // Add routes, both API and view
 app.use(routes);
+// app.get("/hi", function(req,res){res.send("hi")})
 
 
-app.get("/hello", function(req,res){res.send("stop playing around")});
+// app.get("/hello", function(req,res){res.send("stop playing around")});
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactarticles");
 mongoose.Promise = Promise;
