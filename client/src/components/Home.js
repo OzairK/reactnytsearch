@@ -62,7 +62,7 @@ saveArticle = (index) => {
     }
     API.saveArticle(articleToSend)
     .then(res => {
-        console.log(res)
+        console.log(res);
     })
 }
 
