@@ -78,21 +78,21 @@ saveArticle = (index) => {
                 onChange= {this.handleInputChange}
                 value= {this.state.title}
             />
-            <Input
+            {/* <Input
                 name="numOfRecords"
                 placeholder="Number of Record to Retreive"
                 onChange= {this.handleInputChange}
                 value= {this.state.numOfRecords}
-            />
+            /> */}
             <Input
                 name="startDate"
-                placeholder="Starting Date"
+                placeholder="Starting Year"
                 onChange= {this.handleInputChange}
                 value= {this.state.startDate}
             />
             <Input
                 name="endDate"
-                placeholder="Ending Date"
+                placeholder="Ending year"
                 onChange= {this.handleInputChange}
                 value= {this.state.endDate}
             />
