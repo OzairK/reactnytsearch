@@ -20,8 +20,7 @@ handleInputChange = event => {
     this.setState({
         // es6 box notation, changes state on any input based on name attribute of input
         [name]: value                                                                   
-    });
-    // console.log(this.state[name]);          
+    });    
 }
 
 handleFormSubmit = event => {
@@ -47,13 +46,11 @@ buildQueryURL= (searchTerm,startYear,endYear) => {
     if (parseInt(endYear)) {
       queryURL += "&end_date=" + endYear + "0101";
     }
-  
-    // Logging the URL so we have access to it for troubleshooting
-    console.log("---------------\nURL: " + queryURL + "\n---------------");
-  
     return queryURL;
 }
 
+//sends an object of saved article data to be saved
+//sends the data from specified index in state.results array
 saveArticle = (index) => {
     const articleToSend = {
         title: this.state.results[index].headline.main,
@@ -78,12 +75,6 @@ saveArticle = (index) => {
                 onChange= {this.handleInputChange}
                 value= {this.state.title}
             />
-            {/* <Input
-                name="numOfRecords"
-                placeholder="Number of Record to Retreive"
-                onChange= {this.handleInputChange}
-                value= {this.state.numOfRecords}
-            /> */}
             <Input
                 name="startDate"
                 placeholder="Starting Year"
@@ -105,6 +96,7 @@ saveArticle = (index) => {
         <Row>
         <Col size="md-3"></Col>
         <Col size="md-6">
+        
         {(this.state.results.length) ? (
               <List>
                 {this.state.results.map((result,index)=> {
